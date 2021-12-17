@@ -18,7 +18,7 @@ Se puede instalar de manera rápida el proyecto de la manera:
 
 `git clone https://github.com/0kron/flow/tree/main/flow`
 
-Y haciendo un `cd flow/`se puede correr el módulo main(): 
+Y haciendo un `cd flow/` se puede correr el módulo main(): 
 
 `python3 main.py`
 
