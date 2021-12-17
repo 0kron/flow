@@ -19,7 +19,7 @@ def cleanLine(linea):
 
 
 def getPalabras():
-    f = open("kronPy/rimas/palabras.txt")
+    f = open("../flow/palabras.txt")
 
     #limpiarReader = lambda lista: for elemento in lista elemento.replace("\n", "") and elemento.replace(" ", "")
     lectura = f.readlines()
@@ -47,14 +47,14 @@ def addPalabras():
         vocabulario = getPalabras()
 
         ##Abrimos el documento para escribir sobre él: 
-        vocabularioW = open("kronPy/rimas/palabras.txt", "w")
+        vocabularioW = open("../flow/palabras.txt", "w")
 
 
         ##Que el usuario coloque su texto:
-        system("gedit /home/kron/Documents/kronDev/kronPy/rimas/nuevoVocab.txt")
+        system("gedit ../flow/nuevoVocab.txt")
 
         #Se abre el texto que puso el usuario
-        entrada = open("/home/kron/Documents/kronDev/kronPy/rimas/nuevoVocab.txt", "r")
+        entrada = open("../flow/nuevoVocab.txt", "r")
         lectura = entrada.readlines()
         entrada.close()
 
@@ -70,7 +70,7 @@ def addPalabras():
         vocabularioW.close()
 
         ##Se limpia el texto de nuevoVocab
-        formato = open("kronPy/rimas/nuevoVocab.txt", "w")
+        formato = open("../flow/nuevoVocab.txt", "w")
         formato.write("\n...Borre este texto y pegue el texto escogido, guarde y cierre.")
         formato.close()
         return True
@@ -83,7 +83,7 @@ def addPalabra(palabra):
         vocabulario = getPalabras()
 
         ##Abrimos el documento para escribir sobre él: 
-        vocabularioW = open("kronPy/rimas/palabras.txt", "w")
+        vocabularioW = open("../flow/palabras.txt", "w")
 
         if palabra not in vocabulario: vocabulario.append(palabra)
         for palabra in vocabulario: vocabularioW.write(palabra +"\n")
@@ -97,7 +97,7 @@ def removePalabra(palabra):
     vocabulario = getPalabras() 
     try: 
         vocabulario.remove(palabra)
-        vocabularioW = open("kronPy/rimas/palabras.txt", "w")
+        vocabularioW = open("../flow/palabras.txt", "w")
         for palabra in vocabulario: vocabularioW.write(palabra +"\n")
         vocabularioW.close()
     except: pass
