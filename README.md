@@ -15,14 +15,18 @@ Todos los datos de la aplicación de encuentran [aquí](https://github.com/0kron
 
 ###Para usuarios de Linux: 
 Se puede instalar de manera rápida el proyecto de la manera: 
+
 `git clone https://github.com/0kron/flow/tree/main/flow
 `
 Y haciendo un `cd flow/`se puede correr el módulo main(): 
+
 `python3 main.py`
 
 ###Para usuarios de Windows: 
 Copiar la carpeta de **flow** dentro de su ruta de preferencia, asegurarse de que python3 está instalado con: 
+
 `python3 -V` 
+
 Y correr el archivo desde terminal. 
 
 **Nota:** Es importante revisar los comandos del módulo file_reader.py, debido a que las rutas de acceso para ambos archivos *.txt* no están especificadas, añadido esto a que el comando para añadir vocabulario a partir de un texto emplea *gedit* pero este puede ser cambiado por editores de text como *vim*, *nano*, *notebook*, etc. 
