@@ -6,8 +6,8 @@ from os import system
 
 #Rutas, preferentemente las rutas absolutas de acceso a los archivos de texto
 #Paths, preferably Absolute paths to the text files
-palabrasPath = "kronPy/flow/palabras.txt" #Dónde se guarden las palabras - Storage of the words
-vocabularioPath = "/home/kron/Documents/kronDev/kronPy/flow/nuevoVocab.txt" #El archivo para añadir nuevas palabras - To add new words
+palabrasPath = "../flow/palabras.txt" #Dónde se guarden las palabras - Storage of the words
+vocabularioPath = "../flow/nuevoVocab.txt" #El archivo para añadir nuevas palabras - To add new words
 
 def cleanLine(linea): 
     linea = linea.replace("?", "")
@@ -58,7 +58,7 @@ def addPalabras(): #Añadir un texto para nuevo vocabulario - Use a text to add 
 
 
         ##Que el usuario coloque su texto - Input of the text
-        system("gedit "+vocabularioPath)
+        system("gedit "+vocabularioPath) #Cambie gedit por su editor de texto predilecto - Change gedit for your preferred text editor program
 
         #Se abre el texto que puso el usuario - Read input
         entrada = open(vocabularioPath, "r")
