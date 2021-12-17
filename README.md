@@ -1,5 +1,5 @@
 # flow by 0miKron
-## Un programa para apoyar a todo aquel en búsqueda de buena y especializada rima en español.
+### Un programa para apoyar a todo aquel en búsqueda de buena y especializada rima en español.
 
 ## Separación Silábica - Spanish Syllabic Separation
 El algoritmo Open Source de separación silábica disponible en el repositiorio principal de este proyecto está listo para ser implementado dentro de cualquier programa en Python de análisis lírico. Contiene los siguientes atributos: 
@@ -9,7 +9,7 @@ El algoritmo Open Source de separación silábica disponible en el repositiorio 
 - **Fonemas Consonantes** los fonemas que contiene cualquier otra palabra que haga rima consonante con la palabra.
 - **Fonemas Asonantes** los fonemas que contiene cualquier otra palabra que hagan rima asonante con la palabra. 
 
-## flow programa
+## flow - Programa
 Una aplicación de terminal Open Source Offline escrita en Python para que el usuario encuentre de manera rápida y específica rimas, agregue nuevo vocabulario, ya sea a partir de textos completos o por palabras específicas, y quite palabras a su elección.
 Todos los datos de la aplicación de encuentran [aquí](https://github.com/0kron/flow/tree/main/flow) para su revisión. 
 
