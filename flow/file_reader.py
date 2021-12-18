@@ -54,7 +54,7 @@ def addPalabras(): #Añadir un texto para nuevo vocabulario - Use a text to add 
         vocabulario = getPalabras()
 
         ##Abrimos el documento para escribir sobre él - Make the document of words writable
-        vocabularioW = open(vocabularioPath, "w")
+        vocabularioW = open(palabrasPath, "w")
 
 
         ##Que el usuario coloque su texto - Input of the text
