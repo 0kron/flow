@@ -48,31 +48,32 @@ def main():
         coloredPrint("\t[quit] Salir.", tcolor.RED)
         choice = input(": ").lower()
 
-        if choice == "1": #Encontrar rimas - Find rhymes
-            system("clear")
-            coloredPrint("\tEncontrar Rimas\n", tcolor.GREEN)
-            palabra = input(tcolor.PURPLE +"Palabra: "+tcolor.ENDC)
-            finales = formatoRimas(palabra)
-            choice = input(tcolor.PURPLE+"Tipo de Rima: "+tcolor.ENDC)
-            
-            if choice == "quit": 
-                break
-            
-            elif choice == "1": #Rima Consonante - Consonant Rhymes
-                rimas = findRimas(finales[0])
+        if choice == "s":
+                if addPalabra(palabra):
+                    finales = formatoRimas(palabra)
+                    choice = input(tcolor.PURPLE+"Tipo de Rima: "+tcolor.ENDC)
                     
-            elif choice == "2": #Rima Simple - Simple Rhymes
-                rimas = findRimas(finales[1])
-                                
-            elif choice == "3": #Rima Asonante - Assonant Rhymes
-                rimas = findRimas(finales[2])
-            
-            print(tcolor.CYAN)
-            listedPrint(rimas) #Imprimir las rimas - Print Rhymes
-            print(tcolor.ENDC)
-            choice = input(tcolor.PURPLE+"\nVolver al menú o salir [m/s]: "+tcolor.ENDC).lower()
-            if choice == "s": 
-                choice = "quit"
+                    if choice == "quit": 
+                        break
+                    
+                    elif choice == "1": #Rima Consonante - Consonant Rhymes
+                        rimas = findRimas(finales[0], palabra)
+                            
+                    elif choice == "2": #Rima Simple - Simple Rhymes
+                        rimas = findRimas(finales[1], palabra)
+                                        
+                    elif choice == "3": #Rima Asonante - Assonant Rhymes
+                        rimas = findRimas(finales[2], palabra)
+
+
+                    print(tcolor.CYAN)
+                    listedPrint(rimas) #Imprimir las rimas - Print Rhymes
+                    print(tcolor.ENDC)
+                    choice = input(tcolor.PURPLE+"\nVolver al menú o salir [m/s]: "+tcolor.ENDC).lower()
+                    if choice == "s": 
+                        choice = "quit"
+                else: coloredPrint("\n\t- Operación Fallida -\n", tcolor.RED)
+
 
         elif choice == "2": #Añadir palabra al vocabulario - Add single word to the vocabulary
             system("clear")
