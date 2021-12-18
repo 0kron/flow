@@ -6,6 +6,7 @@ vocaDebiles = ["i", "u"]
 
 consonantes = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
 consonantesCompuestas = ["bl", "br", "cr", "cl", "ch", "dr", "gr", "gl", "ll",  "kl", "kr", "pr", "pl", "sh" , "fr", "fl", "tl", "tr", "rr"]
+consonantesCompuestasFin = ["ns", "bs"]
 
 def s_silabas(palabra):
 
