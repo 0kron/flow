@@ -111,11 +111,11 @@ def removePalabra(palabra): #Borrando una palabra si está en el documento de te
     except: return False
 
 
-def findRimas(final): #Encontrar rimas con terminación especificada - Find specific rimes according to the end
+def findRimas(final, original): #Encontrar rimas con terminación especificada - Find specific rimes according to the end
     rimas = []
     palabras = getPalabras()
     for palabra in palabras: 
-        if palabra[-len(final):] == final: rimas.append(palabra)
+        if palabra[-len(final):]== final and palabra != original: rimas.append(palabra)
     return rimas
 
 
