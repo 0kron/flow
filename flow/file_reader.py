@@ -8,6 +8,11 @@ from os import system
 #Paths, preferably Absolute paths to the text files
 palabrasPath = "../flow/palabras.txt" #Dónde se guarden las palabras - Storage of the words
 vocabularioPath = "../flow/nuevoVocab.txt" #El archivo para añadir nuevas palabras - To add new words
+txtEditor = "gedit" #Coloque aquí el nombre de su editor de *.txt
+                    #Para uso general se puede usar <vim>
+                    #En Distribuciones de Linux se pueden usar <gedit>, <nano>, etc
+                    #Para Windows use <notepad>
+                    #Para MacOS use <open -a TextEdit>
 
 def cleanLine(linea): 
     linea = linea.replace("?", "")
@@ -58,7 +63,7 @@ def addPalabras(): #Añadir un texto para nuevo vocabulario - Use a text to add 
 
 
         ##Que el usuario coloque su texto - Input of the text
-        system("gedit "+vocabularioPath) #Cambie gedit por su editor de texto predilecto - Change gedit for your preferred text editor program
+        system(txtEditor+" "+vocabularioPath) #Cambie gedit por su editor de texto predilecto - Change gedit for your preferred text editor program
 
         #Se abre el texto que puso el usuario - Read input
         entrada = open(vocabularioPath, "r")
