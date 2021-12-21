@@ -60,7 +60,7 @@ def s_silabas(palabra):
                 silabas.append(palabra[:puntero])
                 palabra = palabra[puntero:]
                 puntero=0 
-
+        elif palabra[puntero:puntero+1] == "q": puntero+=2
         else: puntero+=1 #No puede haber sílaba sin vocal
     else: 
         puntero = 0
