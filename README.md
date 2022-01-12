@@ -1,7 +1,7 @@
 # flow by 0miKron
 ### Un programa para apoyar a todo aquel en búsqueda de buena y especializada rima en español.
 
-## Separación Silábica - Spanish Syllabic Separation
+## Separación Silábica - Spanish Syllabic Separation - `silabas.py`
 El algoritmo Open Source de separación silábica disponible en el repositiorio principal de este proyecto está listo para ser implementado dentro de cualquier programa en Python de análisis lírico. Contiene los siguientes atributos: 
 - **Separación Silábica** con todas las consideraciones de la lengua española, eje principal del análisis métrico.
 - **Sílaba Tónica** encuentra el índice de la sílaba tónica para futura referencia una vez encontrada la separación silábica. 
