@@ -15,63 +15,70 @@ def s_silabas(palabra):
     silabas = []     
     
     while puntero + 3 <= len(palabra): 
-
+        letra = palabra[puntero]
+        
         #Consideraciones generales para vocales y consonantes
-        if palabra[puntero:puntero+1] in vocales: 
-
+        if letra in vocales: 
+            siguiente = palabra[puntero+1]
+            grupo = palabra[puntero+1:puntero+3]
+            
             #Consideraciones de vocales débiles:
-            if palabra[puntero:puntero+1] in vocaDebiles and palabra[puntero+1:puntero+2] in vocaFuertes: puntero+=1 #Se hace un diptongo vocal Débil + Fuerte
+            if letra in vocaDebiles: 
+                if siguiente in vocaFuertes: puntero+=1 #Se hace un diptongo vocal Débil + Fuerte
 
-            elif palabra[puntero:puntero+1] in vocaDebiles and palabra[puntero+1:puntero+2] in vocaDebiles: #Si son dos vocales débiles se termina en la primera "chi-i-ta"
-                puntero += 1
-                silabas.append(palabra[:puntero])
-                palabra = palabra[puntero:]
-                puntero=0 
+                elif siguiente in vocaDebiles: #Si son dos vocales débiles se termina en la primera "chi-i-ta"
+                    puntero += 1
+                    silabas.append(palabra[:puntero])
+                    palabra = palabra[puntero:]
+                    puntero=0 
 
             #Consideraciones de vocales Fuertes: 
-            elif palabra[puntero:puntero+1] in vocaFuertes and palabra[puntero+1:puntero+2] in vocaFuertes: #Se hace un hiato: "ha-bla-rí-a"
+            if letra in vocaFuertes: 
+                if  siguiente in vocaDebiles: puntero +=1 #Se hace el otro tipo de diptongo Fuerte + Débil
+                
+                elif siguiente in vocaFuertes: #Se hace un hiato: "ha-bla-rí-a"
+                    puntero += 1
+                    silabas.append(palabra[:puntero])
+                    palabra = palabra[puntero:]
+                    puntero=0 
+
+            #Consideraciones para todas las vocales           
+            if grupo in consonantesCompuestas: #Si le sigue una consonante compuesta termina de una "pa-la-bra"
                 puntero += 1
                 silabas.append(palabra[:puntero])
                 palabra = palabra[puntero:]
                 puntero=0 
-
-            elif palabra[puntero:puntero+1] in vocaFuertes and palabra[puntero+1:puntero+2] in vocaDebiles: puntero +=1 #Se hace el otro tipo de diptongo Fuerte + Débil
             
-            elif palabra[puntero+1:puntero+3] in consonantesCompuestas: #Si le sigue una consonante compuesta termina de una "pa-la-bra"
-                puntero += 1
-                silabas.append(palabra[:puntero])
-                palabra = palabra[puntero:]
-                puntero=0 
-
-            elif palabra[puntero+1:puntero+2] in consonantes and palabra[puntero+2:puntero+3] in vocales: #Si sigue consonante y vocal "Gru-po"
-                puntero += 1
-                silabas.append(palabra[:puntero])
-                palabra = palabra[puntero:]
-                puntero=0 
-
-            elif palabra[puntero +1:puntero+3] in consonantesCompuestasFin: #Si la sílaba termina con "bs" o "ns": obs-cu-ro
+            elif grupo in consonantesCompuestasFin: #Si la sílaba termina con "bs" o "ns": obs-cu-ro
                 puntero += 3
                 silabas.append(palabra[:puntero])
                 palabra = palabra[puntero:]
+                puntero=0
+
+            elif siguiente in consonantes and palabra[puntero+2:puntero+3] in vocales: #Si sigue consonante y vocal "Gru-po"
+                puntero += 1
+                silabas.append(palabra[:puntero])
+                palabra = palabra[puntero:]
                 puntero=0 
 
-            elif palabra[puntero+1:puntero+2] in consonantes and palabra[puntero+2:puntero+3] in consonantes: #Si siguen dos consonantes termina en la primera consonante "cam-pa-na"
+            elif siguiente in consonantes and palabra[puntero+2:puntero+3] in consonantes: #Si siguen dos consonantes termina en la primera consonante "cam-pa-na"
                 puntero += 2
                 silabas.append(palabra[:puntero])
                 palabra = palabra[puntero:]
                 puntero=0 
-        elif palabra[puntero:puntero+1] == "q": puntero+=2
+
         else: puntero+=1 #No puede haber sílaba sin vocal
+    
     else: 
         puntero = 0
         while puntero < len(palabra)-1:
-            if palabra[puntero:puntero+1] in vocaFuertes and palabra[puntero+1:puntero+2] in vocaFuertes: 
+            if palabra[puntero] in vocaFuertes and palabra[puntero+1] in vocaFuertes: 
                 silabas.append(palabra[:puntero+1])
                 silabas.append(palabra[puntero+1:])
                 break
             else: puntero += 1
         else: silabas.append(palabra)
-                
+
     return silabas
 
 def s_tonica(silabas = [""]):
